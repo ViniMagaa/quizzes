@@ -1,0 +1,16 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.home-container h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.home-container p span {
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-style: italic;
+}
