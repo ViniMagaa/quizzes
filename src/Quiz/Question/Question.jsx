@@ -1,20 +1,24 @@
 import Option from "./Option/Option";
 
+import "./Question.css"
+
 function Question({ index, question, correctAnswer, incorrectAnswers }) {
 	const answers = [correctAnswer, ...incorrectAnswers];
 
 	return (
-		<div>
+		<div className="question">
 			<h2>Question {index + 1}:</h2>
 			<p dangerouslySetInnerHTML={{ __html: question }} />
-			{answers.map((answer, answerIndex) => (
-				<Option
-					key={answerIndex}
-					index={index}
-					answerIndex={answerIndex}
-					answer={answer}
-				/>
-			))}
+			<div className="options-container">
+				{answers.map((answer, answerIndex) => (
+					<Option
+						key={answerIndex}
+						index={index}
+						answerIndex={answerIndex}
+						answer={answer}
+					/>
+				))}
+			</div>
 		</div>
 	);
 }

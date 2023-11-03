@@ -1,0 +1,61 @@
+header {
+	background-color: var(--black);
+	width: 100%;
+	padding: 2rem;
+  position: fixed;
+	z-index: 1;
+
+	& nav {
+		display: flex;
+		justify-content: space-between;
+
+		& div.links {
+			display: flex;
+			align-items: center;
+			gap: 2rem;
+
+			& a {
+				color: var(--white);
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		& div.search {
+			margin-left: 1rem;
+      max-width: 500px;
+			display: flex;
+			align-items: center;
+
+			& input {
+        width: 100%;
+				font-size: 1rem;
+				color: var(--white);
+				background: transparent;
+				padding: 0.5rem;
+				border: none;
+				outline: none;
+				border-bottom: 1px solid var(--white);
+
+				&::placeholder {
+					color: var(--white);
+				}
+			}
+
+			& button {
+				display: flex;
+				font-size: 1.8rem;
+				background: none;
+				border: none;
+				cursor: pointer;
+
+				& svg {
+					fill: var(--white);
+				}
+			}
+		}
+	}
+}

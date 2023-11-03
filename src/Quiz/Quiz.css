@@ -1,0 +1,32 @@
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+
+	& h1 {
+		text-align: center;
+	}
+
+  & div.questions-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+	& button[type="submit"] {
+		padding: 0.5rem 1rem;
+		background-color: var(--black);
+    border: none;
+		font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+		color: var(--white);
+		cursor: pointer;
+		transition: 0.2s;
+
+		&:hover {
+			color: var(--black);
+			background-color: var(--khaki);
+		}
+	}
+}
