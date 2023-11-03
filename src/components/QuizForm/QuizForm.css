@@ -1,3 +1,9 @@
 form h1 {
 	text-align: center;
 }
+
+.change-questions {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
