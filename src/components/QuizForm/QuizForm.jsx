@@ -1,4 +1,5 @@
 import Question from "./Question/Question";
+import Button from "../Button/Button";
 
 import "./QuizForm.css"
 
@@ -6,9 +7,9 @@ function QuizForm({ data }) {
 	const questions = data;
 
 	return (
-		<form onSubmit={(e) => e.preventDefault()}>
+		<form onSubmit={(e) => e.preventDefault()} className="container">
 			<h1>Quiz 1</h1>
-			<div className="questions-container">
+			<div className="container">
 				{questions.map((question, index) => (
 					<Question
 						key={index}
@@ -19,7 +20,7 @@ function QuizForm({ data }) {
 					/>
 				))}
 			</div>
-			<button type="submit">Submit quiz</button>
+			<Button type="submit" value="Submit Quiz" />
 		</form>
 	);
 }
