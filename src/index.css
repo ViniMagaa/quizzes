@@ -24,7 +24,7 @@ body {
 
 main {
   max-width: 700px;
-  padding: 7rem 2rem 3rem;
+  padding: 7.5rem 2rem 3rem;
   margin: 0 auto 5rem;
   background-color: var(--white);
   box-shadow: var(--box-shadow);

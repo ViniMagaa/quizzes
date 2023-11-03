@@ -1,8 +1,8 @@
 import Question from "./Question/Question";
 
-import "./Quiz.css"
+import "./QuizForm.css"
 
-function Quiz({ data }) {
+function QuizForm({ data }) {
 	const questions = data;
 
 	return (
@@ -24,4 +24,4 @@ function Quiz({ data }) {
 	);
 }
 
-export default Quiz;
+export default QuizForm;

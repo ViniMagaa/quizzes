@@ -6,6 +6,8 @@ header {
 	z-index: 1;
 
 	& nav {
+		max-width: 1000px;
+		margin: auto;
 		display: flex;
 		justify-content: space-between;
 

@@ -1,0 +1,23 @@
+.quiz-container {
+	padding: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	background-color: white;
+	transition: 0.3s;
+
+	&:hover {
+		box-shadow: 0 0 1.5rem rgba(7, 2, 13, 0.2);
+	}
+
+	& .quiz-data {
+		margin-left: 1rem;
+		list-style: none;
+    font-style: italic;
+
+    & span {
+      color: var(--dim-gray);
+			font-weight: 700;
+    }
+	}
+}

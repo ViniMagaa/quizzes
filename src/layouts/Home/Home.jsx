@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import QuizzesContainer from "../../components/QuizzesContainer/QuizzesContainer";
 
-import "./Home.css"
+import "./Home.css";
 
 function Home() {
   return (
@@ -13,9 +13,8 @@ function Home() {
 				Are you ready to put your knowledge to the test? <strong>Select a quiz below</strong> and
 				embark on an <em>intellectual adventure</em>.
 			</p>
-			<div className="quizzes-container">
-				<Link to="/quiz-1">Quiz 1</Link>
-			</div>
+			<h2>Our quizzes:</h2>
+			<QuizzesContainer />
 		</div>
 	);
 }
