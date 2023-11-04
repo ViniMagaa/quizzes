@@ -7,44 +7,69 @@ import "./QuizForm.css";
 
 function QuizForm({ data }) {
 	const questions = data;
-	const [currentQuestion, setCurrentQuestion] = useState(0);
+	const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+	const [userAnswers, setUserAnswers] = useState([]);
+	const correctAnswers = questions.map((question) => {
+		return question.correct_answer;
+	});
 
-	function handleLastQuestion() {
-		setCurrentQuestion((crrQuest) => crrQuest - 1);
+	// Method called when the user click on a option
+	function handleSelectAnswer(answer) {
+		setUserAnswers((prev) => {
+			const updatedUserAnswers = [...prev]; // Creating a copy
+			updatedUserAnswers[currentQuestionIndex] = answer;
+			return updatedUserAnswers;
+		});
 	}
 
+	// To update the question index
 	function handleNextQuestion() {
-		setCurrentQuestion((crrQuest) => crrQuest + 1);
+		// Check if the user clicked on a option
+		if (userAnswers[currentQuestionIndex] === undefined) {
+			alert("First answer this question!");
+			return;
+		}
+		setCurrentQuestionIndex((crrQuest) => crrQuest + 1);
 	}
 
-	function handleSubmit(e) {
-		e.preventDefault();
+	// When the test is finished
+	function handleSubmit() {
+		// Check if all the answers are correct
+		const areAnswersCorrect = userAnswers.every(
+			(answer, index) => answer === correctAnswers[index]
+		);
+
+		if (areAnswersCorrect) {
+			console.log("vc acertou");
+			console.log(userAnswers);
+			console.log(correctAnswers);
+		} else {
+			console.log("vc errou");
+			console.log(userAnswers);
+			console.log(correctAnswers);
+		}
 	}
 
 	return (
-		<form onSubmit={(e) => handleSubmit(e)} className="container">
+		<form onSubmit={(e) => e.preventDefault()} className="container">
 			<h1>Quiz 1</h1>
 			<div className="container">
-				{currentQuestion < questions.length && (
+				{currentQuestionIndex < questions.length && (
 					<Question
-						key={currentQuestion}
-						index={currentQuestion}
-						question={questions[currentQuestion].question}
-						correctAnswer={questions[currentQuestion].correct_answer}
-						incorrectAnswers={questions[currentQuestion].incorrect_answers}
+						key={currentQuestionIndex}
+						index={currentQuestionIndex}
+						question={questions[currentQuestionIndex].question}
+						correctAnswer={questions[currentQuestionIndex].correct_answer}
+						incorrectAnswers={questions[currentQuestionIndex].incorrect_answers}
+						handleClick={handleSelectAnswer}
 					/>
 				)}
 			</div>
-			<div className="change-questions">
-				{currentQuestion > 0 && (
-					<Button value="Previous" handleClick={handleLastQuestion} />
-				)}
-				{currentQuestion < questions.length - 1 ? (
-					<Button value="Next" handleClick={handleNextQuestion} />
-				) : (
-					<Button type="submit" value="Submit" />
-				)}
-			</div>
+			{currentQuestionIndex < questions.length - 1 ? (
+				<Button type="button" value="Next" handleClick={handleNextQuestion} />
+			) : (
+				<Button type="submit" value="Submit" handleClick={handleSubmit} />
+			)}
 		</form>
 	);
 }

@@ -1,6 +1,6 @@
-function Option({index, answerIndex, answer}) {
+function Option({index, answerIndex, answer, handleClick}) {
   return (
-		<div key={answerIndex}>
+		<div key={answerIndex} onClick={() => handleClick(answer)} htmlFor={`answer-${index}-for-${answerIndex}`}>
 			<input
 				type="radio"
 				name={`answer-${index}`}
