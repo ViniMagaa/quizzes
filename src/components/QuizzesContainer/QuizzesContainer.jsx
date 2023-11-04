@@ -2,12 +2,12 @@ import QuizContainer from "./QuizContainer/QuizContainer";
 
 import "./QuizzesContainer.css";
 
-function QuizzesContainer() {
+function QuizzesContainer({quizzes, handleClick}) {
 	return (
 		<div className="quizzes-container">
-			<a href="/quiz" style={{ textDecoration: "none" }}>
-				<QuizContainer />
-			</a>
+			{quizzes.map((quiz, index) => (
+				<QuizContainer key={index} index={index} quizData={quiz} handleClick={handleClick} />
+			))}
 		</div>
 	);
 }

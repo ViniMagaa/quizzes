@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 
 import "./QuizForm.css";
 
-function QuizForm({ data }) {
+function QuizForm({ data, onQuizSubmit }) {
 	const questions = data;
 	const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 	const [userAnswers, setUserAnswers] = useState([]);
@@ -34,20 +34,27 @@ function QuizForm({ data }) {
 
 	// When the test is finished
 	function handleSubmit() {
-		// Check if all the answers are correct
-		const areAnswersCorrect = userAnswers.every(
-			(answer, index) => answer === correctAnswers[index]
-		);
-
-		if (areAnswersCorrect) {
-			console.log("vc acertou");
-			console.log(userAnswers);
-			console.log(correctAnswers);
-		} else {
-			console.log("vc errou");
-			console.log(userAnswers);
-			console.log(correctAnswers);
+		// Check if the user clicked on a option
+		if (userAnswers[currentQuestionIndex] === undefined) {
+			alert("First answer this question!");
+			return;
 		}
+
+		// Check how much questions the user got right
+		let numberCorrectAnswers = 0;
+		const numberQuestions = questions.length;
+		userAnswers.forEach((answer, index) => {
+			if (answer === correctAnswers[index]) {
+				numberCorrectAnswers++;
+			}
+		});
+
+		const quizData = {
+			numberCorrectAnswers,
+			numberQuestions,
+		};
+
+		onQuizSubmit(quizData);
 	}
 
 	return (

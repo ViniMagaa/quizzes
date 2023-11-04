@@ -5,6 +5,7 @@
 	gap: 0.5rem;
 	background-color: white;
 	transition: 0.3s;
+	cursor: pointer;
 
 	& .quiz-data {
 		display: flex;
@@ -15,12 +16,13 @@
 		font-style: italic;
 
 		& span {
+			text-transform: capitalize;
 			color: var(--dim-gray);
 			font-weight: 700;
 		}
 	}
 }
 
-a .quiz-container:hover {
+.quiz-container:hover {
 	box-shadow: 0 0 1.5rem rgba(7, 2, 13, 0.2);
 }

@@ -1,25 +1,26 @@
 import "./QuizContainer.css";
 
-function QuizContainer() {
+function QuizContainer({ index, quizData, handleClick = () => {} }) {
 	return (
-		<div className="quiz-container">
-			<h2>Quiz 1</h2>
-			<p>
-				Quiz description Lorem ipsum dolor sit amet consectetur adipisicing
-				elit.
-			</p>
-			<ul className="quiz-data">
-				<li>
-					Category: <span>General Knowledge</span>
-				</li>
-				<li>
-					Difficulty: <span>Easy</span>
-				</li>
-				<li>
-					Max-score: <span>Not played</span>
-				</li>
-			</ul>
-		</div>
+		<>
+			{quizData && (
+				<div className="quiz-container" onClick={() => handleClick(index)}>
+					<h2>{quizData.title}</h2>
+					<p>{quizData.description}</p>
+					<ul className="quiz-data">
+						<li>
+							Category: <span>{quizData.category}</span>
+						</li>
+						<li>
+							Difficulty: <span>{quizData.difficulty}</span>
+						</li>
+						<li>
+							Number of questions: <span>{quizData.questionsNumber}</span>
+						</li>
+					</ul>
+				</div>
+			)}
+		</>
 	);
 }
 
