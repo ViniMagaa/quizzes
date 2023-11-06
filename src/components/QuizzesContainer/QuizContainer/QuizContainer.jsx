@@ -1,10 +1,10 @@
 import "./QuizContainer.css";
 
-function QuizContainer({ index, quizData, handleClick = () => {} }) {
+function QuizContainer({ quizData }) {
 	return (
 		<>
 			{quizData && (
-				<div className="quiz-container" onClick={() => handleClick(index)}>
+				<div className="quiz-container">
 					<h2>{quizData.title}</h2>
 					<p>{quizData.description}</p>
 					<ul className="quiz-data">

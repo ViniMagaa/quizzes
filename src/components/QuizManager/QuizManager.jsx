@@ -166,7 +166,7 @@ function QuizManager({url, quizContainerData}) {
 			) : (
 				<>
 					<QuizResults information={quizStatistics} />
-					<Button value="Back to home" handleClick={() => window.location.reload()} />
+					<Button value="Back to home" handleClick={() => window.location.assign("/")} />
 				</>
 			)}
 		</div>

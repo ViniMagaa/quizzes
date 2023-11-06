@@ -24,6 +24,30 @@ function Home() {
 			difficulty: "Medium",
 			questionsNumber: 10,
 		},
+		{
+			url: "https://opentdb.com/api.php?amount=15&category=9&difficulty=hard&type=multiple",
+			title: "Quiz 3",
+			description: "This is a hard test",
+			category: "General Knowledge",
+			difficulty: "Hard",
+			questionsNumber: 15,
+		},
+		{
+			url: "https://opentdb.com/api.php?amount=20&category=9&difficulty=hard&type=multiple",
+			title: "Quiz 4",
+			description: "This is a ULTRA-HARD test",
+			category: "General Knowledge",
+			difficulty: "Ultra-Hard",
+			questionsNumber: 20,
+		},
+		{
+			url: "https://opentdb.com/api.php?amount=5&category=19&difficulty=easy&type=multiple",
+			title: "Quiz 5",
+			description: "This is easy math test",
+			category: "Mathematics",
+			difficulty: "Easy",
+			questionsNumber: 5,
+		},
 	];
 
 	function handleClickOnQuiz(index) {

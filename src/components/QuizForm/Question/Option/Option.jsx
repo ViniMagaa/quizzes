@@ -1,6 +1,6 @@
 function Option({index, answerIndex, answer, handleClick}) {
   return (
-		<div key={answerIndex} onClick={() => handleClick(answer)} htmlFor={`answer-${index}-for-${answerIndex}`}>
+		<label key={answerIndex} onClick={() => handleClick(answer)} htmlFor={`answer-${index}-for-${answerIndex}`}>
 			<input
 				type="radio"
 				name={`answer-${index}`}
@@ -10,7 +10,7 @@ function Option({index, answerIndex, answer, handleClick}) {
 				htmlFor={`answer-${index}-for-${answerIndex}`}
 				dangerouslySetInnerHTML={{ __html: answer }}
 			/>
-		</div>
+		</label>
 	);
 }
 

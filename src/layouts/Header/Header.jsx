@@ -13,7 +13,7 @@ function Header() {
 						<img src={logo} alt="Logo" width="30px" />
 					</div>
 					<a href="/">Home</a>
-					<a href="#">Dashboard</a>
+					<a href="/">Dashboard</a>
 				</div>
 				<div className="search">
 					<input
