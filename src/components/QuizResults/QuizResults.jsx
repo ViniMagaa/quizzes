@@ -1,4 +1,6 @@
-function QuizResults({ information }) {
+import QuizContainer from "../QuizzesContainer/QuizContainer/QuizContainer";
+
+function QuizResults({ information, quizData }) {
 
   // Formatting time
 	const timeInMinutes = Math.floor(Number(information.quizTime) / 60);
@@ -6,14 +8,13 @@ function QuizResults({ information }) {
   const formattedTime = timeInMinutes.toString().padStart(2, "0") + ":" + timeInSeconds.toString().padStart(2, "0")
 
 	return (
-		<div>
+		<div className="container">
+			{<QuizContainer quizData={quizData} />}
 			<h1>
 				You scored {information.numberCorrectAnswers}/
 				{information.numberQuestions}
 			</h1>
-			<p>
-				Your time: {formattedTime}
-			</p>
+			<p>Your time: {formattedTime}</p>
 		</div>
 	);
 }
