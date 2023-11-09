@@ -1,0 +1,34 @@
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--black);
+  text-align: center;
+  inset-block-end: 0;
+}
+
+.footer-container * {
+  color: var(--white);
+}
+
+.footer-container .link-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-container .link-icons img {
+  width: 3rem;
+  transition: .2s;
+}
+
+.footer-container .link-icons img:hover {
+  scale: 1.1;
+}
+
+span.copy {
+  opacity: 0.6;
+  scale: 0.8;
+}
