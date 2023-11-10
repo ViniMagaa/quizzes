@@ -5,8 +5,7 @@ import Button from "../Button/Button";
 
 import "./QuizForm.css";
 
-function QuizForm({ data, onQuizSubmit }) {
-	const questions = data;
+function QuizForm({ questions, onQuizSubmit }) {
 	const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 	const [userAnswers, setUserAnswers] = useState([]);
 	const correctAnswers = questions.map((question) => {
@@ -51,7 +50,7 @@ function QuizForm({ data, onQuizSubmit }) {
 
 		const quizData = {
 			numberCorrectAnswers,
-			numberQuestions,
+			numberQuestions
 		};
 
 		onQuizSubmit(quizData);
