@@ -59,7 +59,7 @@ function QuizForm({ data, onQuizSubmit }) {
 
 	return (
 		<form onSubmit={(e) => e.preventDefault()} className="container">
-			<h1>Quiz 1</h1>
+			<h1>Quiz</h1>
 			<div className="container">
 				{currentQuestionIndex < questions.length && (
 					<Question

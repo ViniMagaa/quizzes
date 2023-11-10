@@ -153,8 +153,8 @@ function QuizManager({url, quizContainerData}) {
 			{!isResultsVisible ? (
 				!isQuizFormVisible ? (
 					<>
-						<QuizContainer quizData={quizContainerData} />
 						<h1>Are you ready?</h1>
+						<QuizContainer quizData={quizContainerData} />
 						<Button
 							value="Start Quiz"
 							handleClick={() => setIsQuizFormVisible(true)}
@@ -165,7 +165,7 @@ function QuizManager({url, quizContainerData}) {
 				)
 			) : (
 				<>
-					<QuizResults information={quizStatistics} />
+					<QuizResults information={quizStatistics} quizData={quizContainerData} />
 					<Button value="Back to home" handleClick={() => window.location.assign("/")} />
 				</>
 			)}
